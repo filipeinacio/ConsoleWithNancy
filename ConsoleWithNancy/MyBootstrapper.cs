@@ -24,6 +24,7 @@ namespace ConsoleWithNancy
 
             nancyConventions.StaticContentsConventions.Add((context, path) =>
             {
+                //get the embedded content from the assembly
                 if (Path.GetDirectoryName(context.Request.Path) != null)
                 {
                     var _path = assemblyName +
