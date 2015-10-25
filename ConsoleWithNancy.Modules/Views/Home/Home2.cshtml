@@ -1,0 +1,13 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<ConsoleWithNancy.Modules.ViewModel.HomeViewModel>
+@{
+    Layout = "Views/_Shared/Layout.cshtml";      // Use slash instead of backslash
+    // Don't begin with slash
+    ViewBag.Title = "Home";
+}
+
+<h2>title</h2>
+
+@section scripts
+{
+    <script src="Scripts/jquery-2.1.4.js" ></script>
+}

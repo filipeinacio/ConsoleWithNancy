@@ -1,0 +1,12 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.title</title>
+    @RenderSection("ExtraHeaders", required: false)
+</head>
+<body>
+    @RenderBody()
+    @RenderSection("scripts", required: false )
+</body>
+</html>
