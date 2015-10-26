@@ -1,3 +1,3 @@
 # ConsoleWithNancy
 
-This is a small example os using a website in a windows service.
+This is a small example on how to use a website in a Console/windows service.

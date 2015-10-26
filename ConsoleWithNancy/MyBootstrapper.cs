@@ -2,7 +2,9 @@ using System;
 using System.IO;
 using System.Reflection;
 using ConsoleWithNancy.Modules.Modules;
+using ConsoleWithNancy.Modules.ViewModel;
 using Nancy;
+using Nancy.Authentication.Forms;
 using Nancy.Bootstrapper;
 using Nancy.Conventions;
 using Nancy.Responses;
@@ -56,6 +58,13 @@ namespace ConsoleWithNancy
 
         }
 
+        protected override void ConfigureRequestContainer(TinyIoCContainer container, NancyContext context)
+        {
+            base.ConfigureRequestContainer(container, context);
+
+            container.Register<IUserMapper, HomeViewModel.MyUserMapper>();
+        }
+
         protected override NancyInternalConfiguration InternalConfiguration
         {
             get
@@ -67,6 +76,20 @@ namespace ConsoleWithNancy
         void OnConfigurationBuilder(NancyInternalConfiguration x)
         {
             x.ViewLocationProvider = typeof(ResourceViewLocationProvider);
+        }
+
+        protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
+        {
+            base.ApplicationStartup(container, pipelines);
+
+            var formsAuthConfiguration =
+                new FormsAuthenticationConfiguration()
+                {
+                    RedirectUrl = "~/login",
+                    UserMapper = container.Resolve<IUserMapper>()
+                };
+
+            FormsAuthentication.Enable(pipelines, formsAuthConfiguration);
         }
     }
 }

@@ -1,0 +1,37 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<ConsoleWithNancy.Modules.ViewModel.LoginViewModel>
+@{
+    Layout = "Views/_Shared/Layout.cshtml";      // Use slash instead of backslash
+    // Don't begin with slash
+    ViewBag.Title = "Home";
+}
+
+<h2>Login</h2>
+
+<form action="~/login?returnUrl=@Context.Request.Query.returnUrl" method="POST">
+    <table>
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                <input type="text" name="Username" value="@Model.Username" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                <input type="text" name="Password" value="@Model.Password" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="login" /></td>
+        </tr>
+    </table>
+</form>
+
+@section scripts
+{
+    <script src="Scripts/jquery-2.1.4.js"></script>
+}
