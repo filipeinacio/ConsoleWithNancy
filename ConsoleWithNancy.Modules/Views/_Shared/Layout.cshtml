@@ -3,10 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>@ViewBag.title</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet">/>
     @RenderSection("ExtraHeaders", required: false)
 </head>
 <body>
-    @RenderBody()
-    @RenderSection("scripts", required: false )
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

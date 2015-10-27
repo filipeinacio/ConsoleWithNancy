@@ -7,7 +7,7 @@
 
 <h2>Login</h2>
 
-<form action="~/login?returnUrl=@Context.Request.Query.returnUrl" method="POST">
+<form action="~/login?returnUrl=@Context.Request.Query.returnUrl" method="POST" >
     <table>
         <tr>
             <td>
@@ -30,8 +30,3 @@
         </tr>
     </table>
 </form>
-
-@section scripts
-{
-    <script src="Scripts/jquery-2.1.4.js"></script>
-}

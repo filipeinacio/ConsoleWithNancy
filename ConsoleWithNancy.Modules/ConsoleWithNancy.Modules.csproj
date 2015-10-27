@@ -64,17 +64,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EmbeddedResource Include="Content\bootstrap.css.map" />
+    <EmbeddedResource Include="Content\bootstrap.min.css.map" />
     <None Include="packages.config" />
     <EmbeddedResource Include="Views\Admin\Admin.cshtml" />
     <EmbeddedResource Include="Views\Home\Home.cshtml" />
     <EmbeddedResource Include="Views\_Shared\Layout.cshtml" />
     <EmbeddedResource Include="Views\Home\Home2.cshtml" />
-    <None Include="Scripts\jquery-2.1.4.min.map" />
+    <EmbeddedResource Include="Scripts\jquery-2.1.4.min.map" />
     <EmbeddedResource Include="Views\Login\Login.cshtml" />
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <EmbeddedResource Include="Content\bootstrap.css" />
+    <EmbeddedResource Include="Content\bootstrap.min.css" />
+    <EmbeddedResource Include="Scripts\bootstrap.js" />
+    <EmbeddedResource Include="Scripts\bootstrap.min.js" />
+    <EmbeddedResource Include="Scripts\jquery-2.1.4.intellisense.js" />
     <EmbeddedResource Include="Scripts\jquery-2.1.4.js" />
     <EmbeddedResource Include="Scripts\jquery-2.1.4.min.js" />
   </ItemGroup>
